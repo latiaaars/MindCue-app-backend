@@ -19,7 +19,6 @@ const getUsers = async (req, res, next) => {
   }
   res.json({ users: users.map(user => user.toObject({ getters: true })) });
 };
-// hi i'm lulu
 const signup = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -92,7 +91,7 @@ const signup = async (req, res, next) => {
   }
   res.status(201).json({ userID: createdUser.id, email: createdUser.email, token: token});
 };
-
+// check it verfication 
 const login = async (req, res, next) => {
   const { email, password } = req.body;
 
